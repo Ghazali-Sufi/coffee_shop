@@ -139,7 +139,7 @@ def delete_drink(payload, drink_id):
     except BaseException:
         abort(400)
 
-    return jsonify({'success': True, 'delete': id}), 200
+    return jsonify({'success': True, 'delete': drink_id}), 200
 
 '''
 Example error handling for unprocessable entity
