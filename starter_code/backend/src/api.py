@@ -31,11 +31,10 @@ db_drop_and_create_all()
 @app.route('/drinks', methods=['GET'])
 def get_drinks():
     drinks = Drink.query.all()
-    all_drinks = [drink.short() for drink in drinks]
 
     return jsonify({
         'success': True,
-        'drinks': all_drinks
+        'drinks': [drink.short() for drink in drinks]
     }), 200
 
 '''
